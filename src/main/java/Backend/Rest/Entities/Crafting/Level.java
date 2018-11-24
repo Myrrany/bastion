@@ -1,5 +1,8 @@
 package Backend.Rest.Entities.Crafting;
 
+import lombok.Getter;
+
+@Getter
 public enum Level {
     BASIC(2, 1), ADEPT(4, 3), EXPERT(6, 4), MASTER(8, 6);
 
@@ -28,11 +31,4 @@ public enum Level {
         }
     }
 
-    public int getCost() {
-        return this.cost;
-    }
-
-    public int getDiscountCost() {
-        return this.discountCost;
-    }
 }

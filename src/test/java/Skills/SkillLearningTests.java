@@ -1,4 +1,4 @@
-package Magic;
+package Skills;
 
 import Backend.Rest.Entities.Archetype;
 import Backend.Rest.Entities.Character;
@@ -31,29 +31,29 @@ public class SkillLearningTests {
         }
 
         @Test
-        void alreadyLearntTest(){
+        public void alreadyLearntTest(){
             cha.addSkillToSet(one, 1);
             assertFalse(utils.learnSkill(cha, one));
         }
 
         @Test
-        void missingPrereq(){
+        public void missingPrereq(){
             assertFalse(utils.learnSkill(cha, two));
         }
 
         @Test
-        void noXp(){
+        public void noXp(){
             cha.setXp(0);
             assertFalse(utils.learnSkill(cha, one));
         }
 
         @Test
-        void correctNoPrereq(){
+        public void correctNoPrereq(){
             assertTrue(utils.learnSkill(cha, one));
         }
 
         @Test
-        void correctPrereq(){
+        public void correctPrereq(){
             cha.addSkillToSet(one, 1);
             assertTrue(utils.learnSkill(cha, two));
         }

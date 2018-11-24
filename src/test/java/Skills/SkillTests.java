@@ -33,7 +33,7 @@ public class SkillTests {
     }
 
     @Test
-    void addPrerequisiteTest() {
+    public void addPrerequisiteTest() {
         assertTrue(utils.getPrerequisites().size() == 0);
         utils.addPrerequisite(one);
         assertTrue(utils.getPrerequisites().size() == 1);
@@ -42,7 +42,7 @@ public class SkillTests {
     }
 
     @Test
-    void addDiscountTypesTest() {
+    public void addDiscountTypesTest() {
         assertTrue(utils.getArchDiscounts().size() == 0);
         utils.addDiscountTypes(one);
         assertTrue(utils.getArchDiscounts().size() == 1);
@@ -51,14 +51,14 @@ public class SkillTests {
     }
 
     @Test
-    void addSkillTest() {
+    public void addSkillTest() {
         assertTrue(utils.getSkillList().size() == 0);
         utils.addSkill(one);
         assertTrue(utils.getSkillList().contains(one));
     }
 
     @Test
-    void checkDiscountTest() {
+    public void checkDiscountTest() {
         utils.addSkill(one);
         utils.addSkill(two);
         assertFalse(utils.checkDiscount(one, cha));
@@ -67,7 +67,7 @@ public class SkillTests {
 
 
     @After
-    void cleanUp() {
+    public void cleanUp() {
         utils.setArchDiscounts(new HashMap<>());
         utils.setPrerequisites(new HashMap<>());
         utils.setSkillList(new ArrayList<>());

@@ -41,26 +41,26 @@ public class MagicTestPrereqsTests {
     }
 
     @Test
-    void secondaryCheckRegularTrueTest() {
+    public void secondaryCheckRegularTrueTest() {
         cha.addToSpellbook(one, 1);
         cha.addToSpellbook(two, 1);
         assertTrue(utils.SecondaryCheck(cha, c));
     }
 
     @Test
-    void secondaryCheckRegularFalseTest() {
+    public void secondaryCheckRegularFalseTest() {
         cha.addToSpellbook(one, 1);
         assertFalse(utils.SecondaryCheck(cha, c));
     }
 
     @Test
-    void secondaryCheckIrregularTest() {
+    public void secondaryCheckIrregularTest() {
         cha.addToSpellbook(three, 1);
         assertTrue(utils.SecondaryCheck(cha, c));
     }
 
     @Test
-    void tertiaryCheckRegularTrueTest() {
+    public void tertiaryCheckRegularTrueTest() {
         cha.addToSpellbook(one, 1);
         cha.addToSpellbook(two, 1);
         cha.addToSpellbook(three, 1);
@@ -68,16 +68,16 @@ public class MagicTestPrereqsTests {
     }
 
     @Test
-    void tertiaryCheckRegularFalseRaceTest() {
+    public void tertiaryCheckRegularFalseRaceTest() {
         cha.addToSpellbook(one, 1);
         cha.addToSpellbook(two, 1);
         cha.addToSpellbook(three, 1);
-        cha.setRaceId(Race.VOIDLING);
+        cha.setRace(Race.VOIDLING);
         assertFalse(utils.TertiaryCheck(cha, d));
     }
 
     @Test
-    void tertiaryCheckRegularFalseElementsTest() {
+    public void tertiaryCheckRegularFalseElementsTest() {
         Spell four = new Spell("Test Three", "", 1, false, false);
         utils.addSpell(four, uno, a);
         cha.addToSpellbook(one, 1);
@@ -87,7 +87,7 @@ public class MagicTestPrereqsTests {
     }
 
     @Test
-    void tertiaryCheckRegularFalseAmountTest() {
+    public void tertiaryCheckRegularFalseAmountTest() {
         d.setPrerequisiteSpells(4);
         cha.addToSpellbook(one, 1);
         cha.addToSpellbook(two, 1);
@@ -96,7 +96,7 @@ public class MagicTestPrereqsTests {
     }
 
     @Test
-    void tertiaryCheckIrregular() {
+    public void tertiaryCheckIrregular() {
         Spell four = new Spell("Test Three", "", 1, false, false);
         utils.addSpell(four, uno, d);
         cha.addToSpellbook(four, 1);

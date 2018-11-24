@@ -38,47 +38,48 @@ public class MagicLearningTests {
     }
 
     @Test
-    void elemNullTest() {
+    public void elemNullTest() {
         Spell s = new Spell("Wrong", "Completely", 1, false, false);
+        s.setLevel(new SpellLevel(4, 2, 1, 1, 1));
         assertFalse(utils.learnSpell(cha, s));
     }
 
     @Test
-    void noXpTest() {
+    public void noXpTest() {
         cha.setXp(0);
         assertFalse(utils.learnSpell(cha, one));
     }
 
     @Test
-    void alreadyLearntTest() {
+    public void alreadyLearntTest() {
         cha.addToSpellbook(one, 1);
         assertFalse(utils.learnSpell(cha, one));
     }
 
     @Test
-    void primaryOkayTest() {
+    public void primaryOkayTest() {
         assertTrue(utils.learnSpell(cha, one));
     }
 
     @Test
-    void secondaryNopeTest() {
+    public void secondaryNopeTest() {
         assertFalse(utils.learnSpell(cha, three));
     }
 
     @Test
-    void secondaryOkayTest() {
+    public void secondaryOkayTest() {
         utils.learnSpell(cha, one);
         utils.learnSpell(cha, two);
         assertTrue(utils.learnSpell(cha, three));
     }
 
     @Test
-    void tertiaryNopeTest() {
+    public void tertiaryNopeTest() {
         assertFalse(utils.learnSpell(cha, four));
     }
 
     @Test
-    void tertiaryOkayTest() {
+    public void tertiaryOkayTest() {
         utils.learnSpell(cha, one);
         utils.learnSpell(cha, two);
         utils.learnSpell(cha, three);

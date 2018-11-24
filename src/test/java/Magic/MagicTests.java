@@ -25,7 +25,7 @@ public class MagicTests {
     }
 
     @Test
-    void addElementsTest() {
+    public void addElementsTest() {
         assert utils.getPrimaries().size() == 0;
         assert utils.getSecondaries().size() == 0;
         assert utils.getTertiaries().size() == 0;
@@ -40,7 +40,7 @@ public class MagicTests {
     }
 
     @Test
-    void secondaryPrerequisitesTest() {
+    public void secondaryPrerequisitesTest() {
         PrimaryElement a = new PrimaryElement("Fire", "", 5);
         PrimaryElement b = new PrimaryElement("Water", "", 5);
         SecondaryElement c = new SecondaryElement("Mist", "", 5, a, b, 3);

@@ -94,7 +94,7 @@ public class MagicUtils {
      */
     public boolean learnSpell(Character c, Spell s) {
         Element elem = s.getElement();
-        int cost = c.getArchetypeId() == Archetype.MAGE ? s.getLevel().getDiscountCost() : s.getLevel().getCost();
+        int cost = c.getArchetype() == Archetype.MAGE ? s.getLevel().getDiscountCost() : s.getLevel().getCost();
         if (elem == null || cost > c.getXp() || c.getSpellbook().contains(s)) {
             return false;
         } else if (elem instanceof PrimaryElement && primaries.contains(elem)) {
@@ -141,7 +141,7 @@ public class MagicUtils {
     }
 
     public boolean TertiaryCheck(Character c, TertiaryElement elem) {
-        return utils.getElementsKnown(c).containsKey(elem) || (c.getRaceId() == (elem.getPrerequisiteRace()) && utils.getElementsKnown(c).size() >= elem.getPrerequisiteElementsNumber() && c.getSpellbook().size() >= elem.getPrerequisiteSpells());
+        return utils.getElementsKnown(c).containsKey(elem) || (c.getRace() == (elem.getPrerequisiteRace()) && utils.getElementsKnown(c).size() >= elem.getPrerequisiteElementsNumber() && c.getSpellbook().size() >= elem.getPrerequisiteSpells());
     }
 
 

@@ -4,51 +4,60 @@ import Backend.Rest.Entities.Archetype;
 import Backend.Rest.Entities.Character;
 
 import java.util.Arrays;
-import java.util.Map;
+import java.util.List;
 
 public class CraftingUtils {
 
     public boolean levelUpCraft(Character c, Craft craft) {
-        Map<Craft, Level> temp = c.getCraftsSet();
-        if (temp.get(craft) == Level.MASTER) {
-            return false;
-        } else if ((craft == Craft.PHYSICAL || craft == Craft.MENTAL) && temp.containsKey(craft)) {
-            return false;
-        } else if (craft == Craft.PHYSICAL || craft == Craft.MENTAL) {
+        List<CraftsSet> temporary = c.getCraftsSet();
+        if (craft == Craft.PHYSICAL || craft == Craft.MENTAL) {
+            for (CraftsSet temp : temporary) {
+                if (temp.getCraft() == craft) {
+                    return false;
+                }
+            }
             int cost;
-            if (Arrays.asList(craft.getArchetypes()).contains(c.getArchetypeId())) {
+            if (Arrays.asList(craft.getArchetypes()).contains(c.getArchetype())) {
                 cost = Level.BASIC.getDiscountCost();
             } else {
                 cost = Level.BASIC.getCost();
             }
             if (c.getXp() >= cost) {
-                c.addCraftToSet(craft, Level.BASIC, cost);
+                c.addCraftToSet(new CraftsSet(c, craft, Level.BASIC), cost);
                 return true;
             } else {
                 return false;
             }
         }
-        if (!temp.containsKey(craft)) {
-            if (!checkPrerequisites(c, craft, Level.ADEPT)) {
-                return false;
+        CraftsSet crafts = null;
+        for (CraftsSet temp : temporary){
+            if (temp.getCraft() == craft) {
+                crafts = temp;
+                break;
             }
         }
-        Level now = temp.get(craft);
-        Level next;
-        if (now != null) {
-            next = temp.get(craft).next();
+        Level now;
+        if (crafts == null) {
+            if (!checkPrerequisites(c, craft, Level.ADEPT)) {
+                return false;
+            } else {
+                now = Level.BASIC;
+            }
+        } else if (crafts.getLevel() == Level.MASTER) {
+            return false;
         } else {
-            next = Level.ADEPT;
+            now = crafts.getLevel();
         }
+        Level next = now.next();
         if (checkPrerequisites(c, craft, next)) {
             int cost;
-            if (Arrays.asList(craft.getArchetypes()).contains(c.getArchetypeId())) {
+            if (Arrays.asList(craft.getArchetypes()).contains(c.getArchetype())) {
                 cost = next.getDiscountCost();
             } else {
                 cost = next.getCost();
             }
             if (c.getXp() >= cost) {
-                c.addCraftToSet(craft, next, cost);
+                c.addCraftToSet(new CraftsSet(c, craft, next), cost);
                 return true;
             } else {
                 return false;
@@ -60,7 +69,7 @@ public class CraftingUtils {
 
     public boolean checkPrerequisites(Character c, Craft craft, Level l) {
         boolean prereqCraft;
-        Map<Craft, Level> craftSkills = c.getCraftsSet();
+        List<CraftsSet> craftsSet = c.getCraftsSet();
         if ((craft == Craft.PHYSICAL || craft == Craft.MENTAL) && l != Level.BASIC) {
             return false;
         }
@@ -68,14 +77,48 @@ public class CraftingUtils {
             prereqCraft = true;
         } else if (l == Level.ADEPT) {
             if (craft == Craft.SPELLWEAVING) {
-                prereqCraft = craftSkills.containsKey(Craft.MENTAL) && craftSkills.containsKey(Craft.PHYSICAL);
+                boolean physFound = false;
+                boolean mentFound = false;
+                for (CraftsSet set : craftsSet) {
+                    if (set.getCraft() == Craft.MENTAL) {
+                        mentFound = true;
+                    }
+                    if (set.getCraft() == Craft.PHYSICAL) {
+                        physFound = true;
+                    }
+                    if (mentFound && physFound) {
+                        break;
+                    }
+                }
+                prereqCraft = mentFound && physFound;
             } else if (Arrays.asList(craft.getArchetypes()).contains(Archetype.CRAFTER)) {
-                prereqCraft = craftSkills.containsKey(Craft.PHYSICAL);
+                boolean physFound = false;
+                for (CraftsSet set : craftsSet) {
+                    if (set.getCraft() == Craft.PHYSICAL) {
+                        physFound = true;
+                        break;
+                    }
+                }
+                prereqCraft = physFound;
             } else {
-                prereqCraft = craftSkills.containsKey(Craft.MENTAL);
+                boolean mentFound = false;
+                for (CraftsSet set : craftsSet) {
+                    if (set.getCraft() == Craft.MENTAL) {
+                        mentFound = true;
+                        break;
+                    }
+                }
+                prereqCraft = mentFound;
             }
         } else {
-            prereqCraft = craftSkills.get(craft) == l.previous();
+            boolean craftOkay = false;
+            for (CraftsSet set : craftsSet) {
+                if (set.getCraft() == craft) {
+                    craftOkay = set.getLevel() == l.previous();
+                    break;
+                }
+            }
+            prereqCraft = craftOkay;
         }
         return prereqCraft;
     }

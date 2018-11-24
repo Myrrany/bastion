@@ -2,6 +2,7 @@ import Backend.Rest.Entities.Archetype;
 import Backend.Rest.Entities.Character;
 import Backend.Rest.Entities.CharacterUtils;
 import Backend.Rest.Entities.Crafting.Craft;
+import Backend.Rest.Entities.Crafting.CraftsSet;
 import Backend.Rest.Entities.Crafting.Level;
 import Backend.Rest.Entities.Magic.PrimaryElement;
 import Backend.Rest.Entities.Magic.Spell;
@@ -18,7 +19,7 @@ import java.util.Arrays;
 public class CharacterTests {
 
     private Character c;
-    public CharacterUtils utils = new CharacterUtils();
+    private CharacterUtils utils = new CharacterUtils();
 
     @Before
     public void initialize() {
@@ -26,7 +27,7 @@ public class CharacterTests {
         }
 
     @Test
-    void addToSpellbookTest() {
+    public void addToSpellbookTest() {
         PrimaryElement a = new PrimaryElement("Fire", "", 5);
         PrimaryElement b = new PrimaryElement("Water", "", 5);
         SpellLevel uno = new SpellLevel(1, 1, 1, 4, 5);
@@ -54,7 +55,7 @@ public class CharacterTests {
     }
 
     @Test
-    void addToSkillsetTest() {
+    public void addToSkillsetTest() {
         Skill s = new Skill("Test", "", 1, 1, Arrays.asList(Archetype.FIGHTER, Archetype.HUNTER), null);
         assert c.getSkillset().size() == 0;
         c.addSkillToSet(s, s.getCost());
@@ -63,10 +64,10 @@ public class CharacterTests {
     }
 
     @Test
-    void addToCraftsSetTest() {
+    public void addToCraftsSetTest() {
         Craft craft = Craft.PHYSICAL;
         assert c.getCraftsSet().size() == 0;
-        c.addCraftToSet(craft, Level.BASIC, Level.BASIC.getCost());
+        c.addCraftToSet(new CraftsSet(c, craft, Level.BASIC), Level.BASIC.getCost());
         assert c.getCraftsSet().size() == 1;
         assert c.getXp() == 3;
     }

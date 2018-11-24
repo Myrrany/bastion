@@ -4,8 +4,6 @@ public class Naming {
 
     //Table names
     public static final String CHARS = "characters";
-    public static final String ARCHS = "archetypes";
-    public static final String RACES = "races";
     public static final String ELEMS = "elements";
     public static final String SPELLS = "spells";
     public static final String SPELL_LVLS = "spell_levels";
@@ -21,12 +19,8 @@ public class Naming {
     public static final String SKILL_PREREQ = "skill_prerequisite_reference";
 
     //Field names
-    public static final String ARCH_ID = "archetype_id";
-    public static final String ARCH_NAME = "archetype_name";
-    public static final String ARCH_DESC = "archetype_description";
-    public static final String RACE_ID = "race_id";
-    public static final String RACE_NAME = "race_name";
-    public static final String RACE_DESC = "race_description";
+    public static final String ARCH = "archetype";
+    public static final String RACE = "race_id";
     public static final String CHAR_ID = "character_id";
     public static final String CHAR_NAME = "character_name";
     public static final String CHAR_XP = "xp";
@@ -59,6 +53,10 @@ public class Naming {
     public static final String SPELL_PREREQ_RACE = "prerequisite_race";
     public static final String ELEM_MAX_LEVEL = "element_max_level";
     public static final String ELEM_PREREQ_ELEMS = "prerequisite_elements_number";
-
+    public static final String SET_ID = "set_id";
+    public static final String CHAR = "character";
+    public static final String CRAFT = "craft";
+    public static final String LVL = "level";
+    public static final String ID = "id";
 
 }

@@ -1,7 +1,6 @@
 package Backend.Rest.Entities;
 
-import Backend.Rest.Entities.Crafting.Craft;
-import Backend.Rest.Entities.Crafting.Level;
+import Backend.Rest.Entities.Crafting.CraftsSet;
 import Backend.Rest.Entities.Magic.Spell;
 import Backend.Rest.Entities.Skills.Skill;
 import Backend.Rest.Naming;
@@ -10,9 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Getter
@@ -35,11 +32,9 @@ public class Character {
             inverseJoinColumns = {@JoinColumn(name = Naming.CHAR_ID)})
     private List<Spell> spellbook;
     @Enumerated(EnumType.STRING)
-    @JoinColumn(name = Naming.ARCH_ID)
-    private Archetype archetypeId;
+    private Archetype archetype;
     @Enumerated(EnumType.STRING)
-    @JoinColumn(name = Naming.RACE_ID)
-    private Race raceId;
+    private Race race;
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
@@ -49,23 +44,18 @@ public class Character {
             joinColumns = {@JoinColumn(name = Naming.SKILL_ID)},
             inverseJoinColumns = {@JoinColumn(name = Naming.CHAR_ID)})
     private List<Skill> skillset;
-    @ElementCollection
-    @Enumerated(EnumType.STRING)
-    @JoinTable(name = Naming.CRAFTSET,
-            joinColumns = {@JoinColumn(name = Naming.CHAR_ID, referencedColumnName = Naming.CHAR_ID)})
-    @MapKeyColumn(name = Naming.CRAFT_ID)
-    @Column(name = Naming.CRAFT_LVL)
-    private Map<Craft, Level> craftsSet;
+    @OneToMany(mappedBy = "character")
+    private List<CraftsSet> craftsSet;
 
 
     public Character(String characterName, int xp, Archetype a, Race race) {
         this.characterName = characterName;
         this.xp = xp;
-        this.archetypeId = a;
-        this.raceId = race;
+        this.archetype = a;
+        this.race = race;
         this.spellbook = new ArrayList<>();
         this.skillset = new ArrayList<>();
-        this.craftsSet = new HashMap<>();
+        this.craftsSet = new ArrayList<>();
     }
 
     protected Character() {
@@ -81,22 +71,30 @@ public class Character {
         this.xp -= cost;
     }
 
-    public void addCraftToSet(Craft c, Level l, int cost) {
-        this.craftsSet.put(c, l);
+    public void addCraftToSet(CraftsSet c, int cost) {
+        boolean notNew = false;
+        for (CraftsSet crafts : this.craftsSet) {
+            if (crafts.getCraft() == c.getCraft()) {
+                notNew = true;
+                crafts.setLevel(c.getLevel());
+            }
+        }
+        if (!notNew) {
+            this.craftsSet.add(c);
+
+        }
         this.xp -= cost;
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Name: ");
-        sb.append(this.characterName);
-        sb.append("\nXP: ");
-        sb.append(this.xp);
-        sb.append("\nRace: ");
-        sb.append(this.raceId);
-        sb.append("\nArchetype: ");
-        sb.append(this.archetypeId);
-        sb.append("\n");
-        return sb.toString();
+        return "Name: " +
+                this.characterName +
+                "\nXP: " +
+                this.xp +
+                "\nRace: " +
+                this.race +
+                "\nArchetype: " +
+                this.archetype +
+                "\n";
     }
 }

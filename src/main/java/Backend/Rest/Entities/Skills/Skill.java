@@ -16,20 +16,20 @@ public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int skill_id;
+    @Column(name = Naming.ID)
+    private int id;
     @Column(name = Naming.SKILL_NAME)
     public String name;
     private String skill_description;
     private int cost;
     private int discountCost;
     @ElementCollection
-    @Enumerated
-    @JoinTable(name = Naming.SKILL_ARCH,
-            joinColumns = {@JoinColumn(name = Naming.ARCH_ID)})
-    @Column(name = Naming.SKILL_ID)
+    @Enumerated(EnumType.STRING)
+    @CollectionTable(name = Naming.SKILL_ARCH)
+    @Column(name = Naming.ARCH)
     private List<Archetype> discountArchetypes;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = Naming.SKILL_ID)
+    @JoinColumn(name = Naming.ID)
     private Skill prerequisite;
 
     protected Skill() {

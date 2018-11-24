@@ -29,7 +29,7 @@ public class SkillUtils {
     }
 
     public boolean checkDiscount(Skill s, Character c) {
-        return archDiscounts.get(s).contains(c.getArchetypeId());
+        return archDiscounts.get(s).contains(c.getArchetype());
     }
 
     public void addPrerequisite(Skill s) {

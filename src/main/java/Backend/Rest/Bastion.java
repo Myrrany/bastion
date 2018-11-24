@@ -39,9 +39,9 @@ public class Bastion {
             log.info("");
 
             // fetch an individual customer by ID
-            repository.findById(1L)
+            repository.findById(1)
                     .ifPresent(character -> {
-                        log.info("Character found with findById(1L):");
+                        log.info("Character found with findById(1):");
                         log.info("--------------------------------");
                         log.info(character.toString());
                         log.info("");
@@ -50,9 +50,7 @@ public class Bastion {
             // fetch customers by last characterName
             log.info("Character found with findByLastName('Jack'):");
             log.info("--------------------------------------------");
-            repository.findByCharacterName("Jack").forEach(jack -> {
-                log.info(jack.toString());
-            });
+            repository.findByCharacterName("Jack").forEach(jack -> log.info(jack.toString()));
             log.info("");
         };
     }
