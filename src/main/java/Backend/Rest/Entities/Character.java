@@ -89,12 +89,11 @@ public class Character {
     public String toString() {
         return "Name: " +
                 this.characterName +
-                "\nXP: " +
+                ", XP: " +
                 this.xp +
-                "\nRace: " +
+                ", Race: " +
                 this.race +
-                "\nArchetype: " +
-                this.archetype +
-                "\n";
+                ", Archetype: " +
+                this.archetype;
     }
 }

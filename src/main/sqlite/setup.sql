@@ -1,4 +1,4 @@
-DROP TABLE skill_prerequisite_reference, skillsets, skill_archetypes, skills, crafts_sets, craft_archetypes, craft_levels, crafts, secondary_reference, elements, spell_levels, characters, spells,  spellbook CASCADE;
+DROP TABLE skill_prerequisite_reference, skillsets, skill_archetypes, skills, crafts_sets, secondary_reference, elements, spell_levels, characters, spells,  spellbook CASCADE;
 
 CREATE TABLE characters (
   character_id   SERIAL PRIMARY KEY,
@@ -71,26 +71,7 @@ CREATE TABLE spellbook (
 );
 
 
-CREATE TABLE crafts (
-  craft_id          SERIAL PRIMARY KEY,
-  craft_name        TEXT UNIQUE NOT NULL,
-  craft_description TEXT
-);
 
-CREATE TABLE craft_levels (
-  craft_level   SERIAL PRIMARY KEY,
-  cost          INT NOT NULL,
-  discount_cost INT NOT NULL
-);
-
-CREATE TABLE craft_archetypes (
-  craft_id  INT,
-  archetype TEXT,
-  PRIMARY KEY (craft_id, archetype),
-  FOREIGN KEY (craft_id) REFERENCES crafts (craft_id)
-  ON UPDATE CASCADE
-  ON DELETE CASCADE
-);
 
 CREATE TABLE crafts_sets (
   set_id SERIAL PRIMARY KEY,
