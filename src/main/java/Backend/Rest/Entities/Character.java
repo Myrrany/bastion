@@ -29,8 +29,8 @@ public class Character {
                     CascadeType.MERGE
             })
     @JoinTable(name = Naming.SPELLBOOK,
-            joinColumns = {@JoinColumn(name = Naming.SPELL_ID)},
-            inverseJoinColumns = {@JoinColumn(name = Naming.CHAR_ID)})
+            joinColumns = {@JoinColumn(name = Naming.CHAR_ID)},
+            inverseJoinColumns = {@JoinColumn(name = Naming.SPELL_ID)})
     private List<Spell> spellbook;
     @Enumerated(EnumType.STRING)
     private Archetype archetype;
@@ -42,8 +42,8 @@ public class Character {
                     CascadeType.MERGE
             })
     @JoinTable(name = Naming.SKILLSET,
-            joinColumns = {@JoinColumn(name = Naming.SKILL_ID)},
-            inverseJoinColumns = {@JoinColumn(name = Naming.CHAR_ID)})
+            joinColumns = {@JoinColumn(name = Naming.CHAR_ID)},
+            inverseJoinColumns = {@JoinColumn(name = Naming.SKILL_ID)})
     private List<Skill> skillset;
     @JsonManagedReference
     @OneToMany(mappedBy = "character")

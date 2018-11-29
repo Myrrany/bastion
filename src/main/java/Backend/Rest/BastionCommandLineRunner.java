@@ -35,31 +35,32 @@ public class BastionCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-//        Character chloe = new Character("Chloe", 14, Archetype.HUNTER, Race.VOIDLING);
-//
-//        characterRepository.deleteAll();
-//
-//        // save a couple of customers
-//        characterRepository.save(new Character("Jack", 20, Archetype.ALCHEMIST, Race.TEMPEST));
-//        characterRepository.save(new Character("Kim", 18, Archetype.FIGHTER, Race.VOIDLING));
-//        characterRepository.save(new Character("Jack", 10, Archetype.MAGE, Race.VOIDLING));
-//        characterRepository.save(new Character("Michelle", 25, Archetype.PHYSICIAN, Race.TEMPEST));
-//        characterRepository.save(chloe);
-//        CraftsSet set = new CraftsSet(chloe, Craft.MENTAL, Level.BASIC);
-//        craftsSetRepository.save(set);
-//        chloe.addCraftToSet(set, 3);
-//        characterRepository.save(chloe);
+        Character chloe = new Character("Chloe", 14, Archetype.HUNTER, Race.VOIDLING);
 
-//        skillRepository.deleteAll();
-//
-//        Skill track = new Skill("Tracking / Hunting", "You can track and hunt creatures.", 5, 3, Arrays.asList(Archetype.HUNTER), null);
-//        Skill trap = new Skill("Trapping", "You can set traps. Does require materials of some kind, depending on the type of trap one wants to set.", 5, 3, Arrays.asList(Archetype.HUNTER), track);
-//        Skill stealth = new Skill("Stealth", "As long as you remain still and at a place you could hide, you are invisible for the naked eye. Does not work in open space.", 5, 3, Arrays.asList(Archetype.HUNTER), trap);
-//
-//        skillRepository.save(track);
-//        skillRepository.save(trap);
-//        skillRepository.save(stealth);
+        characterRepository.deleteAll();
 
+        // save a couple of customers
+        characterRepository.save(new Character("Jack", 20, Archetype.ALCHEMIST, Race.TEMPEST));
+        characterRepository.save(new Character("Kim", 18, Archetype.FIGHTER, Race.VOIDLING));
+        characterRepository.save(new Character("Jack", 10, Archetype.MAGE, Race.VOIDLING));
+        characterRepository.save(new Character("Michelle", 25, Archetype.PHYSICIAN, Race.TEMPEST));
+        characterRepository.save(chloe);
+        CraftsSet set = new CraftsSet(chloe, Craft.MENTAL, Level.BASIC);
+        craftsSetRepository.save(set);
+        chloe.addCraftToSet(set, 3);
+
+        skillRepository.deleteAll();
+
+        Skill track = new Skill("Tracking / Hunting", "You can track and hunt creatures.", 5, 3, Arrays.asList(Archetype.HUNTER), null);
+        Skill trap = new Skill("Trapping", "You can set traps. Does require materials of some kind, depending on the type of trap one wants to set.", 5, 3, Arrays.asList(Archetype.HUNTER), track);
+        Skill stealth = new Skill("Stealth", "As long as you remain still and at a place you could hide, you are invisible for the naked eye. Does not work in open space.", 5, 3, Arrays.asList(Archetype.HUNTER), trap);
+
+        skillRepository.save(track);
+        skillRepository.save(trap);
+        skillRepository.save(stealth);
+        chloe.addSkillToSet(track, 3);
+        chloe.addSkillToSet(trap, 3);
+        characterRepository.save(chloe);
 
         // fetch all customers
         log.info("Characters found with findAll():");
