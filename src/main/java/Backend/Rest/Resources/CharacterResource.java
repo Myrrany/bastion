@@ -21,8 +21,41 @@ public class CharacterResource {
 
     @GetMapping("/characters")
     public @ResponseBody
-    Iterable<Character> getAllCharacters(@RequestParam(name = "xp_min", required = false, defaultValue = "0") Integer min, @RequestParam(name = "xp_max", required = false, defaultValue = "2147483647") Integer max) {
-        return characterRepository.findByXpGreaterThanEqualAndXpLessThanEqual(min, max);
+    Iterable<Character> getAllCharacters(@RequestParam(name = "xp_min", required = false, defaultValue = "0") Integer min,
+                                         @RequestParam(name = "xp_max", required = false, defaultValue = "2147483647") Integer max,
+                                         @RequestParam(name = "archetype", required = false, defaultValue = "") String archetype,
+                                         @RequestParam(name = "race", required = false, defaultValue = "") String race,
+                                         @RequestParam(name = "name", required = false, defaultValue = "") String name) {
+        Archetype type = null;
+        Race racey = null;
+        try {
+            type = Archetype.valueOf(archetype.toUpperCase());
+        } catch (IllegalArgumentException e){
+            if (!archetype.equals("")) {
+                System.out.println("Sorry, but " + archetype + " is not a valid archetype.");
+                archetype = "";
+            }
+        }
+        try {
+            racey = Race.valueOf(race.toUpperCase());
+        } catch (IllegalArgumentException e){
+            if (!race.equals("")) {
+                System.out.println("Sorry, but " + race + " is not a valid race.");
+                race = "";
+            }
+        }
+
+
+        if (race.equals("") && archetype.equals("")) {
+            System.out.println("yes hello i get here" + min + " " + max);
+            return characterRepository.findByXpBetweenAndCharacterNameContains(min, max, name);
+        } else if (!race.equals("") && archetype.equals("")) {
+            return characterRepository.findByXpBetweenAndRaceAndCharacterNameContains(min, max, racey, name);
+        } else if (!archetype.equals("") && race.equals("")) {
+            return characterRepository.findByXpBetweenAndArchetypeAndCharacterNameContains(min, max, type, name);
+        } else {
+            return characterRepository.findByXpBetweenAndArchetypeAndRaceAndCharacterNameContains(min, max, type, racey, name);
+        }
     }
 
     @GetMapping("/characters/{id}")
@@ -39,23 +72,5 @@ public class CharacterResource {
     @DeleteMapping("/characters/{id}")
     void deleteCharacter(@PathVariable int id) {
         characterRepository.deleteById(id);
-    }
-
-    @GetMapping("/characters?archetype={archetype}")
-    public @ResponseBody
-    Iterable<Character> findCharactersByArchetype(@PathVariable String archetype) {
-        return characterRepository.findByArchetype(Archetype.valueOf(archetype.toUpperCase()));
-    }
-
-    @GetMapping("/characters?race={race}")
-    public @ResponseBody
-    Iterable<Character> findCharactersByRace(@PathVariable String race) {
-        return characterRepository.findByRace(Race.valueOf(race.toUpperCase()));
-    }
-
-    @GetMapping("/characters?name={name}")
-    public @ResponseBody
-    Iterable<Character> findCharactersByName(@PathVariable String name) {
-        return characterRepository.findByCharacterNameContains(name);
     }
 }

@@ -4,6 +4,7 @@ import Backend.Rest.Entities.Crafting.CraftsSet;
 import Backend.Rest.Entities.Magic.Spell;
 import Backend.Rest.Entities.Skills.Skill;
 import Backend.Rest.Naming;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -44,6 +45,7 @@ public class Character {
             joinColumns = {@JoinColumn(name = Naming.SKILL_ID)},
             inverseJoinColumns = {@JoinColumn(name = Naming.CHAR_ID)})
     private List<Skill> skillset;
+    @JsonManagedReference
     @OneToMany(mappedBy = "character")
     private List<CraftsSet> craftsSet;
 

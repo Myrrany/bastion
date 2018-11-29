@@ -1,6 +1,7 @@
 package Backend.Rest.Entities.Crafting;
 
 import Backend.Rest.Naming;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ public class CraftsSet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = Naming.SET_ID)
     private int id;
+    @JsonBackReference
     @ManyToOne(targetEntity = Character.class)
     @JoinColumn(name = Naming.CHAR)
     private Character character;

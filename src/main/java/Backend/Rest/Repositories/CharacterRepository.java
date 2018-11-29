@@ -15,10 +15,11 @@ public interface CharacterRepository extends PagingAndSortingRepository<Characte
 
     List<Character> findByCharacterNameContains(String sub);
 
-    List<Character> findByArchetype(Archetype archetype);
+    List<Character> findByXpBetweenAndCharacterNameContains(int min, int max, String name);
 
-    List<Character> findByRace(Race race);
+    List<Character> findByXpBetweenAndArchetypeAndCharacterNameContains(int min, int max, Archetype archetype, String name);
 
-    List<Character> findByXpGreaterThanEqualAndXpLessThanEqual(int min, int max);
+    List<Character> findByXpBetweenAndRaceAndCharacterNameContains(int min, int max, Race race, String name);
 
+    List<Character> findByXpBetweenAndArchetypeAndRaceAndCharacterNameContains(int min, int max, Archetype archetype, Race race, String name);
 }
