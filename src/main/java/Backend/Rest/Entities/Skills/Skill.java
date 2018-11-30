@@ -38,17 +38,19 @@ public class Skill {
     joinColumns = {@JoinColumn(name = Naming.PARENT)},
     inverseJoinColumns = {@JoinColumn(name = Naming.CHILD)})
     private Skill prerequisite;
+    private boolean multiAllowed;
 
     protected Skill() {
     }
 
-    public Skill(String name, String skill_description, int cost, int discountCost, List<Archetype> discountArchetypes, Skill prerequisite) {
+    public Skill(String name, String skill_description, int cost, int discountCost, List<Archetype> discountArchetypes, Skill prerequisite, boolean multiAllowed) {
         this.skillName = name;
         this.skillDescription = skill_description;
         this.cost = cost;
         this.discountCost = discountCost;
         this.discountArchetypes = discountArchetypes;
         this.prerequisite = prerequisite;
+        this.multiAllowed = multiAllowed;
     }
 
 }

@@ -9,6 +9,7 @@ import Backend.Rest.Entities.Magic.Spell;
 import Backend.Rest.Entities.Magic.SpellLevel;
 import Backend.Rest.Entities.Race;
 import Backend.Rest.Entities.Skills.Skill;
+import Backend.Rest.Entities.Skills.Skillset;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -56,9 +57,9 @@ public class CharacterTests {
 
     @Test
     public void addToSkillsetTest() {
-        Skill s = new Skill("Test", "", 1, 1, Arrays.asList(Archetype.FIGHTER, Archetype.HUNTER), null);
+        Skill s = new Skill("Test", "", 1, 1, Arrays.asList(Archetype.FIGHTER, Archetype.HUNTER), null, false);
         assert c.getSkillset().size() == 0;
-        c.addSkillToSet(s, s.getCost());
+        c.addSkillToSet(new Skillset(c, s, 1), s.getCost());
         assert c.getSkillset().size() == 1;
         assert c.getXp() == 4;
     }

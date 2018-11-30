@@ -1,4 +1,4 @@
-DROP TABLE skill_prerequisite_reference, skillsets, skill_archetypes, skills, crafts_sets, secondary_reference, elements, spell_levels, characters, spells,  spellbook CASCADE;
+DROP TABLE skill_prerequisite_reference, skillsets, skill_archetypes, skills, crafts_sets, elements, spell_levels, characters, spells, spellbook CASCADE;
 
 CREATE TABLE characters (
   character_id   SERIAL PRIMARY KEY,
@@ -27,18 +27,6 @@ CREATE TABLE elements (
   prerequisite_two             INT,
   prerequisite_race            INT,
   prerequisite_elements_number INT
-);
-
-CREATE TABLE secondary_reference (
-  child_id  INTEGER,
-  parent_id INTEGER,
-  PRIMARY KEY (child_id, parent_id),
-  FOREIGN KEY (child_id) REFERENCES elements (element_id)
-  ON UPDATE CASCADE
-  ON DELETE CASCADE,
-  FOREIGN KEY (parent_id) REFERENCES elements (element_id)
-  ON UPDATE CASCADE
-  ON DELETE SET NULL
 );
 
 CREATE TABLE spells (
@@ -70,25 +58,23 @@ CREATE TABLE spellbook (
   ON DELETE CASCADE
 );
 
-
-
-
 CREATE TABLE crafts_sets (
-  set_id SERIAL PRIMARY KEY,
+  set_id    SERIAL PRIMARY KEY,
   character INT,
-  craft    TEXT,
-  level  TEXT,
+  craft     TEXT,
+  level     TEXT,
   FOREIGN KEY (character) REFERENCES characters (character_id)
   ON UPDATE CASCADE
   ON DELETE CASCADE
 );
 
 CREATE TABLE skills (
-  id          SERIAL PRIMARY KEY,
-  skill_name        TEXT NOT NULL,
+  id                SERIAL PRIMARY KEY,
+  skill_name        TEXT UNIQUE NOT NULL,
   skill_description TEXT,
   cost              INT  NOT NULL,
-  discount_cost     INT  NOT NULL
+  discount_cost     INT  NOT NULL,
+  multi_allowed     BOOLEAN
 );
 
 CREATE TABLE skill_archetypes (
@@ -101,9 +87,10 @@ CREATE TABLE skill_archetypes (
 );
 
 CREATE TABLE skillsets (
+  id SERIAL PRIMARY KEY,
   character_id INT,
   skill_id     INT,
-  PRIMARY KEY (character_id, skill_id),
+  times_taken  INT,
   FOREIGN KEY (character_id) REFERENCES characters (character_id)
   ON UPDATE CASCADE
   ON DELETE CASCADE,

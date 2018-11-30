@@ -41,17 +41,25 @@ public class SkillUtils {
     }
 
     public boolean learnSkill(Character c, Skill s) {
-        if (c.getSkillset().contains(s)) {
-            return false;
-        }
+        boolean prereqFound = false;
         Skill prereq = checkPrerequisites(s);
-        if (prereq != null && c.getSkillset().contains(prereq) || prereq == null) {
+        for (Skillset skills : c.getSkillset()) {
+            if (skills.getSkill() == s) {
+                return skills.getSkill().isMultiAllowed();
+            }
+            if(prereq != null && skills.getSkill() == prereq) {
+                prereqFound = true;
+                break;
+            }
+        }
+
+        if (prereqFound || prereq == null) {
             int cost = s.getCost();
             if (checkDiscount(s, c)) {
                 cost = s.getDiscountCost();
             }
             if (c.getXp() >= cost) {
-                c.addSkillToSet(s, cost);
+                c.addSkillToSet(new Skillset(c, s, 1), cost);
                 return true;
             }
         }

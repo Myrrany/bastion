@@ -27,8 +27,8 @@ public class SkillTests {
 
     @Before
     public void init() {
-        one = new Skill("One", "", 2, 1, Arrays.asList(Archetype.HUNTER, Archetype.FIGHTER), null);
-        two = new Skill("Two", "", 2, 1, Arrays.asList(Archetype.CRAFTER, Archetype.HUNTER), one);
+        one = new Skill("One", "", 2, 1, Arrays.asList(Archetype.HUNTER, Archetype.FIGHTER), null, true);
+        two = new Skill("Two", "", 2, 1, Arrays.asList(Archetype.CRAFTER, Archetype.HUNTER), one, false);
         cha = new Character("Test", 10, Archetype.CRAFTER, Race.TEMPEST);
     }
 

@@ -1,6 +1,7 @@
 package Backend.Rest.Entities.Magic;
 
 import Backend.Rest.Naming;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Setter
 @Inheritance
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Table (name = Naming.ELEMS)
 @DiscriminatorColumn(name = Naming.ELEM_TYPE)
 public abstract class Element {

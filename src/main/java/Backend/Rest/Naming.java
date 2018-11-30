@@ -58,5 +58,6 @@ public class Naming {
     public static final String CRAFT = "craft";
     public static final String LVL = "level";
     public static final String ID = "id";
+    public static final String SKILL_TAKEN = "times_taken";
 
 }

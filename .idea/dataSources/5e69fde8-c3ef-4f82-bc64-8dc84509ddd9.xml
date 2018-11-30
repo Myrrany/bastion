@@ -39,8 +39,8 @@
     </role>
     <schema id="7" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-11-25.20:43:07.723</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1318</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-11-30.22:16:09.512</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2042</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -60,171 +60,174 @@
       <ObjectId>12121</ObjectId>
     </schema>
     <sequence id="13" parent="7" name="characters_character_id_seq">
-      <ObjectId>21189</ObjectId>
-      <StateNumber>1318</StateNumber>
+      <ObjectId>22340</ObjectId>
+      <StateNumber>2042</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
     </sequence>
     <sequence id="14" parent="7" name="crafts_sets_set_id_seq">
-      <ObjectId>21272</ObjectId>
-      <StateNumber>1318</StateNumber>
+      <ObjectId>22408</ObjectId>
+      <StateNumber>2042</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
     </sequence>
     <sequence id="15" parent="7" name="elements_element_id_seq">
-      <ObjectId>21208</ObjectId>
-      <StateNumber>1318</StateNumber>
+      <ObjectId>22359</ObjectId>
+      <StateNumber>2042</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
     </sequence>
     <sequence id="16" parent="7" name="skills_id_seq">
-      <ObjectId>21288</ObjectId>
-      <StateNumber>1318</StateNumber>
+      <ObjectId>22424</ObjectId>
+      <StateNumber>2042</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="17" parent="7" name="spell_levels_spell_level_seq">
-      <ObjectId>21200</ObjectId>
-      <StateNumber>1318</StateNumber>
+    <sequence id="17" parent="7" name="skillsets_id_seq">
+      <ObjectId>22450</ObjectId>
+      <StateNumber>2042</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="18" parent="7" name="spells_spell_id_seq">
-      <ObjectId>21236</ObjectId>
-      <StateNumber>1318</StateNumber>
+    <sequence id="18" parent="7" name="spell_levels_spell_level_seq">
+      <ObjectId>22351</ObjectId>
+      <StateNumber>2042</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
     </sequence>
-    <table id="19" parent="7" name="characters">
-      <ObjectId>21191</ObjectId>
-      <StateNumber>1317</StateNumber>
+    <sequence id="19" parent="7" name="spells_spell_id_seq">
+      <ObjectId>22372</ObjectId>
+      <StateNumber>2042</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="20" parent="7" name="characters">
+      <ObjectId>22342</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
-    <table id="20" parent="7" name="crafts_sets">
-      <ObjectId>21274</ObjectId>
-      <StateNumber>1317</StateNumber>
+    <table id="21" parent="7" name="crafts_sets">
+      <ObjectId>22410</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
-    <table id="21" parent="7" name="elements">
-      <ObjectId>21210</ObjectId>
-      <StateNumber>1317</StateNumber>
-    </table>
-    <table id="22" parent="7" name="secondary_reference">
-      <ObjectId>21221</ObjectId>
-      <StateNumber>1317</StateNumber>
+    <table id="22" parent="7" name="elements">
+      <ObjectId>22361</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
     <table id="23" parent="7" name="skill_archetypes">
-      <ObjectId>21299</ObjectId>
-      <StateNumber>1317</StateNumber>
+      <ObjectId>22437</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
     <table id="24" parent="7" name="skill_prerequisite_reference">
-      <ObjectId>21327</ObjectId>
-      <StateNumber>1317</StateNumber>
+      <ObjectId>22468</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
     <table id="25" parent="7" name="skills">
-      <ObjectId>21290</ObjectId>
-      <StateNumber>1317</StateNumber>
+      <ObjectId>22426</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
     <table id="26" parent="7" name="skillsets">
-      <ObjectId>21312</ObjectId>
-      <StateNumber>1317</StateNumber>
+      <ObjectId>22452</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
     <table id="27" parent="7" name="spell_levels">
-      <ObjectId>21202</ObjectId>
-      <StateNumber>1317</StateNumber>
+      <ObjectId>22353</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
     <table id="28" parent="7" name="spellbook">
-      <ObjectId>21257</ObjectId>
-      <StateNumber>1317</StateNumber>
+      <ObjectId>22393</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
     <table id="29" parent="7" name="spells">
-      <ObjectId>21238</ObjectId>
-      <StateNumber>1317</StateNumber>
+      <ObjectId>22374</ObjectId>
+      <StateNumber>2041</StateNumber>
     </table>
-    <column id="30" parent="19" name="character_id">
+    <column id="30" parent="20" name="character_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1306</StateNumber>
+      <StateNumber>2031</StateNumber>
       <DefaultExpression>nextval(&apos;characters_character_id_seq&apos;::regclass)</DefaultExpression>
       <SequenceName>characters_character_id_seq</SequenceName>
     </column>
-    <column id="31" parent="19" name="character_name">
+    <column id="31" parent="20" name="character_name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1306</StateNumber>
+      <StateNumber>2031</StateNumber>
     </column>
-    <column id="32" parent="19" name="xp">
+    <column id="32" parent="20" name="xp">
       <Position>3</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1306</StateNumber>
+      <StateNumber>2031</StateNumber>
     </column>
-    <column id="33" parent="19" name="archetype">
+    <column id="33" parent="20" name="archetype">
       <Position>4</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1306</StateNumber>
+      <StateNumber>2031</StateNumber>
     </column>
-    <column id="34" parent="19" name="race">
+    <column id="34" parent="20" name="race">
       <Position>5</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1306</StateNumber>
+      <StateNumber>2031</StateNumber>
     </column>
-    <index id="35" parent="19" name="characters_pkey">
-      <ObjectId>21198</ObjectId>
+    <index id="35" parent="20" name="characters_pkey">
+      <ObjectId>22349</ObjectId>
       <ColNames>character_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="36" parent="19" name="characters_pkey">
-      <ObjectId>21199</ObjectId>
+    <key id="36" parent="20" name="characters_pkey">
+      <ObjectId>22350</ObjectId>
       <ColNames>character_id</ColNames>
       <UnderlyingIndexName>characters_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="37" parent="20" name="set_id">
+    <column id="37" parent="21" name="set_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1312</StateNumber>
+      <StateNumber>2036</StateNumber>
       <DefaultExpression>nextval(&apos;crafts_sets_set_id_seq&apos;::regclass)</DefaultExpression>
       <SequenceName>crafts_sets_set_id_seq</SequenceName>
     </column>
-    <column id="38" parent="20" name="character">
+    <column id="38" parent="21" name="character">
       <Position>2</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1312</StateNumber>
+      <StateNumber>2036</StateNumber>
     </column>
-    <column id="39" parent="20" name="craft">
+    <column id="39" parent="21" name="craft">
       <Position>3</Position>
       <DataType>text|0</DataType>
-      <StateNumber>1312</StateNumber>
+      <StateNumber>2036</StateNumber>
     </column>
-    <column id="40" parent="20" name="level">
+    <column id="40" parent="21" name="level">
       <Position>4</Position>
       <DataType>text|0</DataType>
-      <StateNumber>1312</StateNumber>
+      <StateNumber>2036</StateNumber>
     </column>
-    <index id="41" parent="20" name="crafts_sets_pkey">
-      <ObjectId>21281</ObjectId>
+    <index id="41" parent="21" name="crafts_sets_pkey">
+      <ObjectId>22417</ObjectId>
       <ColNames>set_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="20" name="crafts_sets_pkey">
-      <ObjectId>21282</ObjectId>
+    <key id="42" parent="21" name="crafts_sets_pkey">
+      <ObjectId>22418</ObjectId>
       <ColNames>set_id</ColNames>
       <UnderlyingIndexName>crafts_sets_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="43" parent="20" name="crafts_sets_character_fkey">
-      <ObjectId>21283</ObjectId>
+    <foreign-key id="43" parent="21" name="crafts_sets_character_fkey">
+      <ObjectId>22419</ObjectId>
       <ColNames>character</ColNames>
-      <RefTableId>21191</RefTableId>
+      <RefTableId>22342</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>characters</RefTableName>
       <RefKeyName>characters_pkey</RefKeyName>
@@ -232,158 +235,111 @@
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="44" parent="21" name="element_id">
+    <column id="44" parent="22" name="element_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
       <DefaultExpression>nextval(&apos;elements_element_id_seq&apos;::regclass)</DefaultExpression>
       <SequenceName>elements_element_id_seq</SequenceName>
     </column>
-    <column id="45" parent="21" name="element_name">
+    <column id="45" parent="22" name="element_name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <column id="46" parent="21" name="element_description">
+    <column id="46" parent="22" name="element_description">
       <Position>3</Position>
       <DataType>text|0</DataType>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <column id="47" parent="21" name="element_type">
+    <column id="47" parent="22" name="element_type">
       <Position>4</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <column id="48" parent="21" name="element_max_level">
+    <column id="48" parent="22" name="element_max_level">
       <Position>5</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <column id="49" parent="21" name="prerequisite_spells">
+    <column id="49" parent="22" name="prerequisite_spells">
       <Position>6</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <column id="50" parent="21" name="prerequisite_one">
+    <column id="50" parent="22" name="prerequisite_one">
       <Position>7</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <column id="51" parent="21" name="prerequisite_two">
+    <column id="51" parent="22" name="prerequisite_two">
       <Position>8</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <column id="52" parent="21" name="prerequisite_race">
+    <column id="52" parent="22" name="prerequisite_race">
       <Position>9</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <column id="53" parent="21" name="prerequisite_elements_number">
+    <column id="53" parent="22" name="prerequisite_elements_number">
       <Position>10</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1308</StateNumber>
+      <StateNumber>2033</StateNumber>
     </column>
-    <index id="54" parent="21" name="elements_pkey">
-      <ObjectId>21217</ObjectId>
+    <index id="54" parent="22" name="elements_pkey">
+      <ObjectId>22368</ObjectId>
       <ColNames>element_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="55" parent="21" name="elements_element_name_key">
-      <ObjectId>21219</ObjectId>
+    <index id="55" parent="22" name="elements_element_name_key">
+      <ObjectId>22370</ObjectId>
       <ColNames>element_name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="56" parent="21" name="elements_pkey">
-      <ObjectId>21218</ObjectId>
+    <key id="56" parent="22" name="elements_pkey">
+      <ObjectId>22369</ObjectId>
       <ColNames>element_id</ColNames>
       <UnderlyingIndexName>elements_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="57" parent="21" name="elements_element_name_key">
-      <ObjectId>21220</ObjectId>
+    <key id="57" parent="22" name="elements_element_name_key">
+      <ObjectId>22371</ObjectId>
       <ColNames>element_name</ColNames>
       <UnderlyingIndexName>elements_element_name_key</UnderlyingIndexName>
     </key>
-    <column id="58" parent="22" name="child_id">
+    <column id="58" parent="23" name="skill_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1309</StateNumber>
+      <StateNumber>2038</StateNumber>
     </column>
-    <column id="59" parent="22" name="parent_id">
-      <Position>2</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1309</StateNumber>
-    </column>
-    <index id="60" parent="22" name="secondary_reference_pkey">
-      <ObjectId>21224</ObjectId>
-      <ColNames>child_id
-parent_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="61" parent="22" name="secondary_reference_pkey">
-      <ObjectId>21225</ObjectId>
-      <ColNames>child_id
-parent_id</ColNames>
-      <UnderlyingIndexName>secondary_reference_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="62" parent="22" name="secondary_reference_child_id_fkey">
-      <ObjectId>21226</ObjectId>
-      <ColNames>child_id</ColNames>
-      <RefTableId>21210</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>elements</RefTableName>
-      <RefKeyName>elements_pkey</RefKeyName>
-      <RefColNames>element_id</RefColNames>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-    </foreign-key>
-    <foreign-key id="63" parent="22" name="secondary_reference_parent_id_fkey">
-      <ObjectId>21231</ObjectId>
-      <ColNames>parent_id</ColNames>
-      <RefTableId>21210</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>elements</RefTableName>
-      <RefKeyName>elements_pkey</RefKeyName>
-      <RefColNames>element_id</RefColNames>
-      <OnDelete>set-null</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-    </foreign-key>
-    <column id="64" parent="23" name="skill_id">
-      <Position>1</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1314</StateNumber>
-    </column>
-    <column id="65" parent="23" name="archetype">
+    <column id="59" parent="23" name="archetype">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1314</StateNumber>
+      <StateNumber>2038</StateNumber>
     </column>
-    <index id="66" parent="23" name="skill_archetypes_pkey">
-      <ObjectId>21305</ObjectId>
+    <index id="60" parent="23" name="skill_archetypes_pkey">
+      <ObjectId>22443</ObjectId>
       <ColNames>skill_id
 archetype</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="67" parent="23" name="skill_archetypes_pkey">
-      <ObjectId>21306</ObjectId>
+    <key id="61" parent="23" name="skill_archetypes_pkey">
+      <ObjectId>22444</ObjectId>
       <ColNames>skill_id
 archetype</ColNames>
       <UnderlyingIndexName>skill_archetypes_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="68" parent="23" name="skill_archetypes_skill_id_fkey">
-      <ObjectId>21307</ObjectId>
+    <foreign-key id="62" parent="23" name="skill_archetypes_skill_id_fkey">
+      <ObjectId>22445</ObjectId>
       <ColNames>skill_id</ColNames>
-      <RefTableId>21290</RefTableId>
+      <RefTableId>22426</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>skills</RefTableName>
       <RefKeyName>skills_pkey</RefKeyName>
@@ -391,35 +347,35 @@ archetype</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="69" parent="24" name="child_id">
+    <column id="63" parent="24" name="child_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1316</StateNumber>
+      <StateNumber>2040</StateNumber>
     </column>
-    <column id="70" parent="24" name="parent_id">
+    <column id="64" parent="24" name="parent_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1316</StateNumber>
+      <StateNumber>2040</StateNumber>
     </column>
-    <index id="71" parent="24" name="skill_prerequisite_reference_pkey">
-      <ObjectId>21330</ObjectId>
+    <index id="65" parent="24" name="skill_prerequisite_reference_pkey">
+      <ObjectId>22471</ObjectId>
       <ColNames>child_id
 parent_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="72" parent="24" name="skill_prerequisite_reference_pkey">
-      <ObjectId>21331</ObjectId>
+    <key id="66" parent="24" name="skill_prerequisite_reference_pkey">
+      <ObjectId>22472</ObjectId>
       <ColNames>child_id
 parent_id</ColNames>
       <UnderlyingIndexName>skill_prerequisite_reference_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="73" parent="24" name="skill_prerequisite_reference_child_id_fkey">
-      <ObjectId>21332</ObjectId>
+    <foreign-key id="67" parent="24" name="skill_prerequisite_reference_child_id_fkey">
+      <ObjectId>22473</ObjectId>
       <ColNames>child_id</ColNames>
-      <RefTableId>21290</RefTableId>
+      <RefTableId>22426</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>skills</RefTableName>
       <RefKeyName>skills_pkey</RefKeyName>
@@ -427,10 +383,10 @@ parent_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="74" parent="24" name="skill_prerequisite_reference_parent_id_fkey">
-      <ObjectId>21337</ObjectId>
+    <foreign-key id="68" parent="24" name="skill_prerequisite_reference_parent_id_fkey">
+      <ObjectId>22478</ObjectId>
       <ColNames>parent_id</ColNames>
-      <RefTableId>21290</RefTableId>
+      <RefTableId>22426</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>skills</RefTableName>
       <RefKeyName>skills_pkey</RefKeyName>
@@ -438,77 +394,101 @@ parent_id</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="75" parent="25" name="id">
+    <column id="69" parent="25" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1313</StateNumber>
+      <StateNumber>2037</StateNumber>
       <DefaultExpression>nextval(&apos;skills_id_seq&apos;::regclass)</DefaultExpression>
       <SequenceName>skills_id_seq</SequenceName>
     </column>
-    <column id="76" parent="25" name="skill_name">
+    <column id="70" parent="25" name="skill_name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1313</StateNumber>
+      <StateNumber>2037</StateNumber>
     </column>
-    <column id="77" parent="25" name="skill_description">
+    <column id="71" parent="25" name="skill_description">
       <Position>3</Position>
       <DataType>text|0</DataType>
-      <StateNumber>1313</StateNumber>
+      <StateNumber>2037</StateNumber>
     </column>
-    <column id="78" parent="25" name="cost">
+    <column id="72" parent="25" name="cost">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1313</StateNumber>
+      <StateNumber>2037</StateNumber>
     </column>
-    <column id="79" parent="25" name="discount_cost">
+    <column id="73" parent="25" name="discount_cost">
       <Position>5</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1313</StateNumber>
+      <StateNumber>2037</StateNumber>
     </column>
-    <index id="80" parent="25" name="skills_pkey">
-      <ObjectId>21297</ObjectId>
+    <column id="74" parent="25" name="multi_allowed">
+      <Position>6</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>2037</StateNumber>
+    </column>
+    <index id="75" parent="25" name="skills_pkey">
+      <ObjectId>22433</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="81" parent="25" name="skills_pkey">
-      <ObjectId>21298</ObjectId>
+    <index id="76" parent="25" name="skills_skill_name_key">
+      <ObjectId>22435</ObjectId>
+      <ColNames>skill_name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="77" parent="25" name="skills_pkey">
+      <ObjectId>22434</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>skills_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="82" parent="26" name="character_id">
+    <key id="78" parent="25" name="skills_skill_name_key">
+      <ObjectId>22436</ObjectId>
+      <ColNames>skill_name</ColNames>
+      <UnderlyingIndexName>skills_skill_name_key</UnderlyingIndexName>
+    </key>
+    <column id="79" parent="26" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1315</StateNumber>
+      <StateNumber>2039</StateNumber>
+      <DefaultExpression>nextval(&apos;skillsets_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>skillsets_id_seq</SequenceName>
     </column>
-    <column id="83" parent="26" name="skill_id">
+    <column id="80" parent="26" name="character_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1315</StateNumber>
+      <StateNumber>2039</StateNumber>
     </column>
-    <index id="84" parent="26" name="skillsets_pkey">
-      <ObjectId>21315</ObjectId>
-      <ColNames>character_id
-skill_id</ColNames>
+    <column id="81" parent="26" name="skill_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>2039</StateNumber>
+    </column>
+    <column id="82" parent="26" name="times_taken">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>2039</StateNumber>
+    </column>
+    <index id="83" parent="26" name="skillsets_pkey">
+      <ObjectId>22456</ObjectId>
+      <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="85" parent="26" name="skillsets_pkey">
-      <ObjectId>21316</ObjectId>
-      <ColNames>character_id
-skill_id</ColNames>
+    <key id="84" parent="26" name="skillsets_pkey">
+      <ObjectId>22457</ObjectId>
+      <ColNames>id</ColNames>
       <UnderlyingIndexName>skillsets_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="86" parent="26" name="skillsets_character_id_fkey">
-      <ObjectId>21317</ObjectId>
+    <foreign-key id="85" parent="26" name="skillsets_character_id_fkey">
+      <ObjectId>22458</ObjectId>
       <ColNames>character_id</ColNames>
-      <RefTableId>21191</RefTableId>
+      <RefTableId>22342</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>characters</RefTableName>
       <RefKeyName>characters_pkey</RefKeyName>
@@ -516,10 +496,10 @@ skill_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="87" parent="26" name="skillsets_skill_id_fkey">
-      <ObjectId>21322</ObjectId>
+    <foreign-key id="86" parent="26" name="skillsets_skill_id_fkey">
+      <ObjectId>22463</ObjectId>
       <ColNames>skill_id</ColNames>
-      <RefTableId>21290</RefTableId>
+      <RefTableId>22426</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>skills</RefTableName>
       <RefKeyName>skills_pkey</RefKeyName>
@@ -527,78 +507,78 @@ skill_id</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="88" parent="27" name="spell_level">
+    <column id="87" parent="27" name="spell_level">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1307</StateNumber>
+      <StateNumber>2032</StateNumber>
       <DefaultExpression>nextval(&apos;spell_levels_spell_level_seq&apos;::regclass)</DefaultExpression>
       <SequenceName>spell_levels_spell_level_seq</SequenceName>
     </column>
-    <column id="89" parent="27" name="casting_time">
+    <column id="88" parent="27" name="casting_time">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1307</StateNumber>
+      <StateNumber>2032</StateNumber>
     </column>
-    <column id="90" parent="27" name="cooldown">
+    <column id="89" parent="27" name="cooldown">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1307</StateNumber>
+      <StateNumber>2032</StateNumber>
     </column>
-    <column id="91" parent="27" name="cost">
+    <column id="90" parent="27" name="cost">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1307</StateNumber>
+      <StateNumber>2032</StateNumber>
     </column>
-    <column id="92" parent="27" name="discount_cost">
+    <column id="91" parent="27" name="discount_cost">
       <Position>5</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1307</StateNumber>
+      <StateNumber>2032</StateNumber>
     </column>
-    <index id="93" parent="27" name="spell_levels_pkey">
-      <ObjectId>21206</ObjectId>
+    <index id="92" parent="27" name="spell_levels_pkey">
+      <ObjectId>22357</ObjectId>
       <ColNames>spell_level</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="94" parent="27" name="spell_levels_pkey">
-      <ObjectId>21207</ObjectId>
+    <key id="93" parent="27" name="spell_levels_pkey">
+      <ObjectId>22358</ObjectId>
       <ColNames>spell_level</ColNames>
       <UnderlyingIndexName>spell_levels_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="95" parent="28" name="character_id">
+    <column id="94" parent="28" name="character_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1311</StateNumber>
+      <StateNumber>2035</StateNumber>
     </column>
-    <column id="96" parent="28" name="spell_id">
+    <column id="95" parent="28" name="spell_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1311</StateNumber>
+      <StateNumber>2035</StateNumber>
     </column>
-    <index id="97" parent="28" name="spellbook_pkey">
-      <ObjectId>21260</ObjectId>
+    <index id="96" parent="28" name="spellbook_pkey">
+      <ObjectId>22396</ObjectId>
       <ColNames>character_id
 spell_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="98" parent="28" name="spellbook_pkey">
-      <ObjectId>21261</ObjectId>
+    <key id="97" parent="28" name="spellbook_pkey">
+      <ObjectId>22397</ObjectId>
       <ColNames>character_id
 spell_id</ColNames>
       <UnderlyingIndexName>spellbook_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="99" parent="28" name="spellbook_character_id_fkey">
-      <ObjectId>21262</ObjectId>
+    <foreign-key id="98" parent="28" name="spellbook_character_id_fkey">
+      <ObjectId>22398</ObjectId>
       <ColNames>character_id</ColNames>
-      <RefTableId>21191</RefTableId>
+      <RefTableId>22342</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>characters</RefTableName>
       <RefKeyName>characters_pkey</RefKeyName>
@@ -606,10 +586,10 @@ spell_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="100" parent="28" name="spellbook_spell_id_fkey">
-      <ObjectId>21267</ObjectId>
+    <foreign-key id="99" parent="28" name="spellbook_spell_id_fkey">
+      <ObjectId>22403</ObjectId>
       <ColNames>spell_id</ColNames>
-      <RefTableId>21238</RefTableId>
+      <RefTableId>22374</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>spells</RefTableName>
       <RefKeyName>spells_pkey</RefKeyName>
@@ -617,67 +597,67 @@ spell_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="101" parent="29" name="spell_id">
+    <column id="100" parent="29" name="spell_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1310</StateNumber>
+      <StateNumber>2034</StateNumber>
       <DefaultExpression>nextval(&apos;spells_spell_id_seq&apos;::regclass)</DefaultExpression>
       <SequenceName>spells_spell_id_seq</SequenceName>
     </column>
-    <column id="102" parent="29" name="spell_name">
+    <column id="101" parent="29" name="spell_name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1310</StateNumber>
+      <StateNumber>2034</StateNumber>
     </column>
-    <column id="103" parent="29" name="spell_description">
+    <column id="102" parent="29" name="spell_description">
       <Position>3</Position>
       <DataType>text|0</DataType>
-      <StateNumber>1310</StateNumber>
+      <StateNumber>2034</StateNumber>
     </column>
-    <column id="104" parent="29" name="element_id">
+    <column id="103" parent="29" name="element_id">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1310</StateNumber>
+      <StateNumber>2034</StateNumber>
     </column>
-    <column id="105" parent="29" name="spell_level">
+    <column id="104" parent="29" name="spell_level">
       <Position>5</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1310</StateNumber>
+      <StateNumber>2034</StateNumber>
     </column>
-    <column id="106" parent="29" name="range">
+    <column id="105" parent="29" name="range">
       <Position>6</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>1310</StateNumber>
+      <StateNumber>2034</StateNumber>
     </column>
-    <column id="107" parent="29" name="self">
+    <column id="106" parent="29" name="self">
       <Position>7</Position>
       <DataType>boolean|0</DataType>
-      <StateNumber>1310</StateNumber>
+      <StateNumber>2034</StateNumber>
     </column>
-    <column id="108" parent="29" name="touch">
+    <column id="107" parent="29" name="touch">
       <Position>8</Position>
       <DataType>boolean|0</DataType>
-      <StateNumber>1310</StateNumber>
+      <StateNumber>2034</StateNumber>
     </column>
-    <index id="109" parent="29" name="spells_pkey">
-      <ObjectId>21245</ObjectId>
+    <index id="108" parent="29" name="spells_pkey">
+      <ObjectId>22381</ObjectId>
       <ColNames>spell_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="110" parent="29" name="spells_pkey">
-      <ObjectId>21246</ObjectId>
+    <key id="109" parent="29" name="spells_pkey">
+      <ObjectId>22382</ObjectId>
       <ColNames>spell_id</ColNames>
       <UnderlyingIndexName>spells_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="111" parent="29" name="spells_element_id_fkey">
-      <ObjectId>21247</ObjectId>
+    <foreign-key id="110" parent="29" name="spells_element_id_fkey">
+      <ObjectId>22383</ObjectId>
       <ColNames>element_id</ColNames>
-      <RefTableId>21210</RefTableId>
+      <RefTableId>22361</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>elements</RefTableName>
       <RefKeyName>elements_pkey</RefKeyName>
@@ -685,10 +665,10 @@ spell_id</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="112" parent="29" name="spells_spell_level_fkey">
-      <ObjectId>21252</ObjectId>
+    <foreign-key id="111" parent="29" name="spells_spell_level_fkey">
+      <ObjectId>22388</ObjectId>
       <ColNames>spell_level</ColNames>
-      <RefTableId>21202</RefTableId>
+      <RefTableId>22353</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>spell_levels</RefTableName>
       <RefKeyName>spell_levels_pkey</RefKeyName>

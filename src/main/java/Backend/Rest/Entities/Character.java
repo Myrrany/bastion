@@ -3,7 +3,9 @@ package Backend.Rest.Entities;
 import Backend.Rest.Entities.Crafting.CraftsSet;
 import Backend.Rest.Entities.Magic.Spell;
 import Backend.Rest.Entities.Skills.Skill;
+import Backend.Rest.Entities.Skills.Skillset;
 import Backend.Rest.Naming;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +17,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Table(name = Naming.CHARS)
 public class Character {
     @Id
@@ -36,15 +39,9 @@ public class Character {
     private Archetype archetype;
     @Enumerated(EnumType.STRING)
     private Race race;
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            })
-    @JoinTable(name = Naming.SKILLSET,
-            joinColumns = {@JoinColumn(name = Naming.CHAR_ID)},
-            inverseJoinColumns = {@JoinColumn(name = Naming.SKILL_ID)})
-    private List<Skill> skillset;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "character")
+    private List<Skillset> skillset;
     @JsonManagedReference
     @OneToMany(mappedBy = "character")
     private List<CraftsSet> craftsSet;
@@ -68,8 +65,18 @@ public class Character {
         this.xp -= cost;
     }
 
-    public void addSkillToSet(Skill s, int cost) {
-        this.skillset.add(s);
+    public void addSkillToSet(Skillset s, int cost) {
+        boolean notNew = false;
+        for (Skillset skills : this.skillset) {
+            if (skills.getSkill() == s.getSkill()) {
+                notNew = true;
+                skills.setTimesTaken(skills.getTimesTaken() + 1);
+            }
+        }
+        if (!notNew) {
+            this.skillset.add(s);
+
+        }
         this.xp -= cost;
     }
 
