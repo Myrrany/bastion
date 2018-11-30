@@ -30,7 +30,6 @@ public class MagicTests {
         assert utils.getSecondaries().size() == 0;
         assert utils.getTertiaries().size() == 0;
         PrimaryElement a = new PrimaryElement("Fire", "", 5);
-        System.out.println(utils.getPrimaries().size());
         assert utils.getPrimaries().size() == 1;
         PrimaryElement b = new PrimaryElement("Water", "", 5);
         SecondaryElement c = new SecondaryElement("Mist", "", 5, a, b, 3);

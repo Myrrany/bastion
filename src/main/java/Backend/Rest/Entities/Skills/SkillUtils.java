@@ -49,10 +49,8 @@ public class SkillUtils {
             }
             if(prereq != null && skills.getSkill() == prereq) {
                 prereqFound = true;
-                break;
             }
         }
-
         if (prereqFound || prereq == null) {
             int cost = s.getCost();
             if (checkDiscount(s, c)) {

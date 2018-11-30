@@ -57,7 +57,7 @@ public class SkillLearningTests {
 
         @Test
         public void correctPrereq(){
-            cha.addSkillToSet(new Skillset(cha, two, 1), 1);
+            cha.addSkillToSet(new Skillset(cha, one, 1), 1);
             assertTrue(utils.learnSkill(cha, two));
         }
 
