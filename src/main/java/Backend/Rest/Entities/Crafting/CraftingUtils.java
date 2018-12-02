@@ -17,7 +17,7 @@ public class CraftingUtils {
                 }
             }
             int cost;
-            if (Arrays.asList(craft.getArchetypes()).contains(c.getArchetype())) {
+            if (craft.getArchetype().equals(c.getArchetype())) {
                 cost = Level.BASIC.getDiscountCost();
             } else {
                 cost = Level.BASIC.getCost();
@@ -51,7 +51,7 @@ public class CraftingUtils {
         Level next = now.next();
         if (checkPrerequisites(c, craft, next)) {
             int cost;
-            if (Arrays.asList(craft.getArchetypes()).contains(c.getArchetype())) {
+            if (craft.getArchetype().equals(c.getArchetype())) {
                 cost = next.getDiscountCost();
             } else {
                 cost = next.getCost();
@@ -91,7 +91,7 @@ public class CraftingUtils {
                     }
                 }
                 prereqCraft = mentFound && physFound;
-            } else if (Arrays.asList(craft.getArchetypes()).contains(Archetype.CRAFTER)) {
+            } else if (craft.getArchetype().equals(Archetype.CRAFTER)) {
                 boolean physFound = false;
                 for (CraftsSet set : craftsSet) {
                     if (set.getCraft() == Craft.PHYSICAL) {

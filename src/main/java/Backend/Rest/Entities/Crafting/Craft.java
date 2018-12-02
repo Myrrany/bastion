@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public enum Craft {
     PHYSICAL(Archetype.CRAFTER),
 
-    MENTAL(Archetype.PHYSICIAN, Archetype.ALCHEMIST),
+    MENTAL(Archetype.PHYSICIAN),
 
     SMITHING(Archetype.CRAFTER),
 
@@ -21,20 +21,20 @@ public enum Craft {
 
     CONSTRUCTION(Archetype.CRAFTER),
 
-    SPELLWEAVING(),
+    SPELLWEAVING(null),
 
-    ALCHEMY(Archetype.ALCHEMIST),
+    ALCHEMY(Archetype.PHYSICIAN),
 
     MEDICAL(Archetype.PHYSICIAN);
 
-    private Archetype[] archetypes;
+    private Archetype archetype;
 
-    Craft(Archetype... types) {
-        this.archetypes = types;
+    Craft(Archetype type) {
+        this.archetype = type;
     }
 
-    public Archetype[] getArchetypes() {
-        return this.archetypes;
+    public Archetype getArchetype() {
+        return this.archetype;
     }
 
 }

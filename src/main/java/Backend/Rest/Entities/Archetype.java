@@ -12,7 +12,7 @@ public enum Archetype {
      * @Version 0.1
      */
 
-    MAGE(""), ALCHEMIST(""), CRAFTER(""), FIGHTER(""), HUNTER(""), PHYSICIAN("");
+    MAGE(""), CRAFTER(""), FIGHTER(""), HUNTER(""), PHYSICIAN("");
     private String description;
 
     Archetype(String desc) {

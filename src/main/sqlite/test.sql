@@ -1,1 +1,0 @@
-INSERT INTO races (race_name, race_description) VALUES ('TEMPEST', '');

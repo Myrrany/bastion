@@ -2,12 +2,15 @@ package Backend.Rest;
 
 import Backend.Rest.Entities.Archetype;
 import Backend.Rest.Entities.Character;
+import Backend.Rest.Entities.CharacterUtils;
 import Backend.Rest.Entities.Crafting.Craft;
+import Backend.Rest.Entities.Crafting.CraftingUtils;
 import Backend.Rest.Entities.Crafting.CraftsSet;
 import Backend.Rest.Entities.Crafting.Level;
 import Backend.Rest.Entities.Magic.*;
 import Backend.Rest.Entities.Race;
 import Backend.Rest.Entities.Skills.Skill;
+import Backend.Rest.Entities.Skills.SkillUtils;
 import Backend.Rest.Entities.Skills.Skillset;
 import Backend.Rest.Repositories.CharacterRepository;
 import Backend.Rest.Repositories.Crafting.CraftsSetRepository;
@@ -34,6 +37,10 @@ public class BastionCommandLineRunner implements CommandLineRunner {
     private final ElementRepository elementRepository;
     private final SpellRepository spellRepository;
     private final SpellLevelRepository spellLevelRepository;
+    MagicUtils magicUtils = new MagicUtils();
+    SkillUtils skillUtils = new SkillUtils();
+    CraftingUtils craftingUtils = new CraftingUtils();
+    CharacterUtils characterUtils = new CharacterUtils();
 
     @Autowired
     public BastionCommandLineRunner(CharacterRepository characterRepository,
@@ -55,7 +62,7 @@ public class BastionCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        Character ceri = new Character("Ceri", 14, Archetype.HUNTER, Race.VOIDLING);
+        Character doctor = new Character("NONE YET", 5, Archetype.PHYSICIAN, Race.VOIDLING);
         PrimaryElement uno = new PrimaryElement("Fire", "Hurts when you touch it", 5);
         PrimaryElement dos = new PrimaryElement("Water", "Soft and soothing", 5);
         SecondaryElement tres = new SecondaryElement("Steam", "Very punk", 5, uno, dos, 3);
@@ -69,14 +76,14 @@ public class BastionCommandLineRunner implements CommandLineRunner {
         characterRepository.deleteAll();
 
         // save a couple of customers
-        characterRepository.save(new Character("Jack", 20, Archetype.ALCHEMIST, Race.TEMPEST));
+        characterRepository.save(new Character("Jack", 20, Archetype.CRAFTER, Race.TEMPEST));
         characterRepository.save(new Character("Kim", 18, Archetype.FIGHTER, Race.VOIDLING));
         characterRepository.save(new Character("Jack", 10, Archetype.MAGE, Race.VOIDLING));
         characterRepository.save(new Character("Michelle", 25, Archetype.PHYSICIAN, Race.TEMPEST));
-        characterRepository.save(ceri);
-        CraftsSet set = new CraftsSet(ceri, Craft.MENTAL, Level.BASIC);
+        characterRepository.save(doctor);
+        CraftsSet set = new CraftsSet(doctor, Craft.MENTAL, Level.BASIC);
         craftsSetRepository.save(set);
-        ceri.addCraftToSet(set, 3);
+        doctor.addCraftToSet(set, 3);
 
         skillRepository.deleteAll();
 
@@ -87,14 +94,14 @@ public class BastionCommandLineRunner implements CommandLineRunner {
         skillRepository.save(track);
         skillRepository.save(trap);
         skillRepository.save(stealth);
-        Skillset tracking = new Skillset(ceri, track, 1);
-        Skillset trapping = new Skillset(ceri, trap, 1);
+        Skillset tracking = new Skillset(doctor, track, 1);
+        Skillset trapping = new Skillset(doctor, trap, 1);
         skillsetRepository.save(tracking);
         skillsetRepository.save(trapping);
-        ceri.addSkillToSet(tracking, 3);
-        ceri.addSkillToSet(trapping, 3);
-        ceri.addSkillToSet(tracking, 0);
-        ceri.addSkillToSet(tracking, 0);
+        doctor.addSkillToSet(tracking, 3);
+        doctor.addSkillToSet(trapping, 3);
+        doctor.addSkillToSet(tracking, 0);
+        doctor.addSkillToSet(tracking, 0);
 
         spellRepository.deleteAll();
         spellLevelRepository.deleteAll();
@@ -110,8 +117,8 @@ public class BastionCommandLineRunner implements CommandLineRunner {
         spellLevelRepository.save(one);
         spellRepository.save(spell);
 
-        ceri.addToSpellbook(spell, 2);
-        characterRepository.save(ceri);
+        doctor.addToSpellbook(spell, 2);
+        characterRepository.save(doctor);
 
 
         // fetch all customers
