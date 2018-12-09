@@ -1,8 +1,10 @@
 package Backend.Rest.Entities.Magic;
 
 import Backend.Rest.Naming;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -13,8 +15,8 @@ import java.util.List;
 
 @Entity
 @DiscriminatorValue("Secondary")
-@Getter
-@Setter
+@Data
+@RestResource
 public class SecondaryElement extends Element {
 
     /**

@@ -2,14 +2,16 @@ package Backend.Rest.Entities.Magic;
 
 import Backend.Rest.Naming;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 
+@Data
 @Entity
-@Getter
-@Setter
+@RestResource
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Table(name = Naming.SPELLS)
 public class Spell {

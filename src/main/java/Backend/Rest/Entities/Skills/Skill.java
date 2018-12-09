@@ -6,15 +6,17 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Data
 @Entity
-@Getter
-@Setter
+@RestResource
 @Table(name = Naming.SKILLS)
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @JsonSerialize

@@ -1,17 +1,19 @@
 package Backend.Rest.Entities.Magic;
 
 import Backend.Rest.Naming;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Data
 @Entity
-@Getter
-@Setter
+@RestResource
 @Table(name = Naming.SPELL_LVLS)
 public class SpellLevel {
 

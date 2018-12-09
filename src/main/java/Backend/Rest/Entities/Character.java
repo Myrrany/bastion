@@ -7,18 +7,23 @@ import Backend.Rest.Entities.Skills.Skillset;
 import Backend.Rest.Naming;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 @Entity
-@Getter
-@Setter
+@RestResource
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Table(name = Naming.CHARS)
+@JsonRootName(value = "Character")
 public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,18 +2,17 @@ package Backend.Rest.Entities.Magic;
 
 import Backend.Rest.Naming;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
-import java.util.List;
 
-@Getter
-@Setter
-@Inheritance
+@Data
 @Entity
+@RestResource
+@Inheritance
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
-@Table (name = Naming.ELEMS)
+@Table(name = Naming.ELEMS)
 @DiscriminatorColumn(name = Naming.ELEM_TYPE)
 public abstract class Element {
 

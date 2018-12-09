@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/api/")
+@RequestMapping("/api")
 public class CharacterResource {
 
     private final CharacterRepository characterRepository;
@@ -48,6 +48,7 @@ public class CharacterResource {
 
         if (race.equals("") && archetype.equals("")) {
             System.out.println("yes hello i get here" + min + " " + max);
+
             return characterRepository.findByXpBetweenAndCharacterNameContains(min, max, name);
         } else if (!race.equals("") && archetype.equals("")) {
             return characterRepository.findByXpBetweenAndRaceAndCharacterNameContains(min, max, racey, name);

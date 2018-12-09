@@ -98,8 +98,8 @@ public class BastionCommandLineRunner implements CommandLineRunner {
         Skillset trapping = new Skillset(doctor, trap, 1);
         skillsetRepository.save(tracking);
         skillsetRepository.save(trapping);
-        doctor.addSkillToSet(tracking, 3);
-        doctor.addSkillToSet(trapping, 3);
+        doctor.addSkillToSet(tracking, 0);
+        doctor.addSkillToSet(trapping, 0);
         doctor.addSkillToSet(tracking, 0);
         doctor.addSkillToSet(tracking, 0);
 

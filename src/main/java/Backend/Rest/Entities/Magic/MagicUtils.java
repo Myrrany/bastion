@@ -3,6 +3,7 @@ package Backend.Rest.Entities.Magic;
 import Backend.Rest.Entities.Archetype;
 import Backend.Rest.Entities.Character;
 import Backend.Rest.Entities.CharacterUtils;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,8 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-@Getter
-@Setter
+@Data
 public class MagicUtils {
 
     /**

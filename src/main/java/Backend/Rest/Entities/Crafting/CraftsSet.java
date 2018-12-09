@@ -2,15 +2,17 @@ package Backend.Rest.Entities.Crafting;
 
 import Backend.Rest.Naming;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import Backend.Rest.Entities.Character;
+import org.springframework.data.rest.core.annotation.RestResource;
 
+@Data
 @Entity
-@Getter
-@Setter
+@RestResource
 @Table(name = Naming.CRAFTSET)
 public class CraftsSet {
 

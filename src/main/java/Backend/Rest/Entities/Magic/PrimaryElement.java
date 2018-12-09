@@ -1,9 +1,14 @@
 package Backend.Rest.Entities.Magic;
 
+import lombok.Data;
+import org.springframework.data.rest.core.annotation.RestResource;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@Data
+@RestResource
 @DiscriminatorValue("Primary")
 public class PrimaryElement extends Element {
 

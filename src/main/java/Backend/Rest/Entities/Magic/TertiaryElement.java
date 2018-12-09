@@ -1,16 +1,18 @@
 package Backend.Rest.Entities.Magic;
 
 import Backend.Rest.Entities.Race;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("Tertiary")
-@Getter
-@Setter
+@Data
+@RestResource
 public class TertiaryElement extends Element {
 
     /**
